@@ -1,0 +1,32 @@
+﻿@model HaberSitesi.Entities.Concrete.News
+@{
+    ViewBag.Title = "HaberDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Haber Detayı</h4>
+@using (Html.BeginForm("HaberDetay", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.NewsID)
+        @Html.Label("Haber Resim")
+        @Html.TextBoxFor(x => x.NewsImage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.NewsImage)
+        <br />
+        @Html.Label("Haber Başlığı")
+        @Html.TextBoxFor(x => x.NewsTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.NewsTitle)
+        <br />
+        @Html.Label("Haber İçeriği")
+        @Html.TextBoxFor(x => x.NewsContent, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.NewsContent)
+        <br />
+        @Html.Label("Kategori")
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        <br />
+        @Html.Label("Yazar")
+        @Html.DropDownListFor(x => x.WriterID, (List<SelectListItem>)ViewBag.vlw, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-warning" type="submit">Güncelle</button>
+    </div>
+}

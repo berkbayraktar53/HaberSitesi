@@ -1,0 +1,15 @@
+﻿@using HaberSitesi.Entities.Concrete
+@model List<News>
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <div class="latest_newsarea">
+            <span>Son Dakika</span>
+            <ul id="ticker01" class="news_sticker">
+                @foreach (var item in Model)
+                {
+                    <li><a href="/@item.Category.CategoryName/Haber/@item.NewsID"><img src="@item.NewsImage" alt="">@item.NewsTitle</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

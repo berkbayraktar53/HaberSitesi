@@ -1,0 +1,30 @@
+﻿@model HaberSitesi.Entities.Concrete.Admin
+@{
+    ViewBag.Title = "AdminDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Admin Detayı</h4>
+@using (Html.BeginForm("AdminDetay", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.AdminID)
+        @Html.Label("Ad")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.Name)
+        <br />
+        @Html.Label("Soyad")
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.Surname)
+        <br />
+        @Html.Label("Email")
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Email)
+        <br />
+        @Html.Label("Şifre")
+        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Password)
+        <br />
+        <button class="btn btn-warning" type="submit">Güncelle</button>
+    </div>
+}

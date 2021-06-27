@@ -1,0 +1,16 @@
+﻿@using HaberSitesi.Entities.Concrete
+@model List<News>
+<div class="single_post_content_left">
+    <ul class="business_catgnav  wow fadeInDown">
+        @foreach (var item in Model)
+        {
+            <li>
+                <figure class="bsbig_fig">
+                    <a href="/Gundem/Haber/@item.NewsID" class="featured_img"> <img alt="" src="@item.NewsImage"> <span class="overlay"></span> </a>
+                    <figcaption> <a href="/Gundem/Haber/@item.NewsID">@item.NewsTitle</a> </figcaption>
+                    <p>@item.NewsContent.Substring(0, 250)...</p>
+                </figure>
+            </li>
+        }
+    </ul>
+</div>

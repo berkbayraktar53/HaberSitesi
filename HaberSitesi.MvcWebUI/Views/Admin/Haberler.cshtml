@@ -1,0 +1,40 @@
+﻿@using HaberSitesi.Entities.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<News>
+@{
+    ViewBag.Title = "Haberler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <div style="float:left"><h4>Tüm Haberler</h4></div>
+    <div style="float:right"><a href="/Admin/HaberEkle" class="btn btn-success">Ekle</a></div>
+</div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Resim</th>
+        <th>Tarih</th>
+        <th>Başlık</th>
+        <th>İçerik</th>
+        <th>Kategori</th>
+        <th>Yazar</th>
+        <th>Düzenle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img src="@item.NewsImage" style="width:100px; height:60px;" /></td>
+            <td>@item.NewsDate.ToShortDateString()</td>
+            <td>@item.NewsTitle</td>
+            <td>@item.NewsContent.Substring(0, 90)...</td>
+            <td>@item.Category.CategoryName</td>
+            <td>@item.Writer.WriterName @item.Writer.WriterSurname</td>
+            <td><a href="/Admin/HaberDetay/@item.NewsID" class="btn btn-warning">Düzenle</a></td>
+            <td><a href="/Admin/HaberSil/@item.NewsID" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Haberler", new { sayfa }))

@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="newsSection">
+    @Html.Action("SonDakika", "Anasayfa")
+</section>
+<section id="sliderSection">
+    <div class="row">
+        @Html.Action("Slider", "Anasayfa")
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            @Html.Action("SonHaberler", "Anasayfa")
+        </div>
+    </div>
+</section>
+<section id="contentSection">
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="left_content">
+                @Html.Action("Gundem", "Anasayfa")
+                <div class="fashion_technology_area">
+                    @Html.Action("Ekonomi", "Anasayfa")
+                    @Html.Action("Dunya", "Anasayfa")
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <aside class="right_content">
+                @Html.Action("Spor", "Anasayfa")
+                @Html.Action("Saglik", "Anasayfa")
+                @Html.Action("Teknoloji", "Anasayfa")
+            </aside>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Admin Paneli</title>
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <link rel="icon" href="~/Templates/assets/img/favicon.png" type="image/gif">
+    <link rel="stylesheet" href="~/Templates/Admin/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/Templates/Admin/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <a href="/Admin/Haberler" class="brand-link">
+                <img src="~/Templates/Admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                     style="opacity: .8">
+                <span class="brand-text font-weight-light">Admin Paneli</span>
+            </a>
+            <div class="sidebar">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="~/Templates/Admin/dist/img/manager.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="/Admin/Haberler" class="d-block">Kerem Berk Bayraktar</a>
+                    </div>
+                </div>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item has-treeview">
+                            <a href="/Admin/Haberler" class="nav-link">
+                                <i class="nav-icon fas fa-list"></i>
+                                <p>
+                                    Haberler
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Admin/Yazarlar" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Yazarlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Admin/Ayarlar" class="nav-link">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>
+                                    Ayarlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Anasayfa" target="_blank" class="nav-link">
+                                <i class="nav-icon fas fa-share"></i>
+                                <p>
+                                    Siteye Git
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Login/CikisYap" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>
+                                    Çıkış Yap
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="content-wrapper">
+            <div class="content-header">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <script src="~/Templates/Admin/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Templates/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Templates/Admin/dist/js/adminlte.js"></script>
+    <script src="~/Templates/Admin/dist/js/demo.js"></script>
+</body>
+</html>

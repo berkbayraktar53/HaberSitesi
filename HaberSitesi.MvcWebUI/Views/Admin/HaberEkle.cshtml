@@ -1,0 +1,32 @@
+﻿@model HaberSitesi.Entities.Concrete.News
+@{
+    ViewBag.Title = "HaberEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Yeni Haber Ekle</h4>
+<br />
+@using (Html.BeginForm("HaberEkle", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Haber Resim")
+        @Html.TextBoxFor(x => x.NewsImage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.NewsImage)
+        <br />
+        @Html.Label("Haber Başlığı")
+        @Html.TextBoxFor(x => x.NewsTitle, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.NewsTitle)
+        <br />
+        @Html.Label("Haber içeriği")
+        @Html.TextAreaFor(x => x.NewsContent, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.NewsContent)
+        <br />
+        @Html.Label("Haber kategorisi")
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        <br />
+        @Html.Label("Haber yazarı")
+        @Html.DropDownListFor(x => x.WriterID, (List<SelectListItem>)ViewBag.vlw, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Ekle</button>
+    </div>
+}

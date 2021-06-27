@@ -1,0 +1,32 @@
+﻿@model HaberSitesi.Entities.Concrete.News
+@{
+    ViewBag.Title = "Haber";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <section id="contentSection">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+                <div class="left_content">
+                    <div class="single_page">
+                        <ol class="breadcrumb">
+                            <li><a href="/Ekonomi/Index">Ekonomi Haberleri</a></li>
+                            <li class="active" style="color:white">@Model.NewsTitle</li>
+                        </ol>
+                        <h1>@Model.NewsTitle</h1>
+                        <div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i>@Model.Writer.WriterName @Model.Writer.WriterSurname</a> <span><i class="fa fa-calendar"></i>@Model.NewsDate.ToShortDateString()</span> <a href="#"><i class="fa fa-tags"></i>@Model.Category.CategoryName</a> </div>
+                        <div class="single_page_content">
+                            <img class="img-center" src="@Model.NewsImage" alt="">
+                            <p>@Model.NewsContent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                @Html.Action("SonHaberler", "Anasayfa")
+                @Html.Action("Spor", "Anasayfa")
+            </div>
+        </div>
+    </section>
+</div>

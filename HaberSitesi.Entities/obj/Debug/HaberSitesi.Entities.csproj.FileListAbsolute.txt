@@ -1,0 +1,12 @@
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\bin\Debug\HaberSitesi.Entities.dll.config
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\bin\Debug\HaberSitesi.Entities.dll
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\bin\Debug\HaberSitesi.Entities.pdb
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\bin\Debug\EntityFramework.dll
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\bin\Debug\EntityFramework.xml
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\obj\Debug\HaberSitesi.Entities.csprojAssemblyReference.cache
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\obj\Debug\HaberSitesi.Entities.csproj.CoreCompileInputs.cache
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\obj\Debug\HaberSitesi.Entities.csproj.CopyComplete
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\obj\Debug\HaberSitesi.Entities.dll
+C:\Users\BERK\source\repos\HaberSitesi\HaberSitesi.Entities\obj\Debug\HaberSitesi.Entities.pdb

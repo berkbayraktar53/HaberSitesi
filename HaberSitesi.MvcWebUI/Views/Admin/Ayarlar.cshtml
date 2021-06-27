@@ -1,0 +1,67 @@
+﻿@using HaberSitesi.Entities.Concrete
+@model List<Admin>
+@{
+    ViewBag.Title = "Ayarlar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Hesap Ayarları</h4>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Admin Bilgisi</h3>
+                    </div>
+                    <form role="form" id="quickForm">
+                        @foreach (var item in Model)
+                        {
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Ad</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input type="text" name="Name" class="form-control" id="exampleInputEmail1" value="@item.Name" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Soyad</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input type="text" name="Name" class="form-control" id="exampleInputEmail1" value="@item.Surname" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Mail</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                        </div>
+                                        <input type="email" name="Email" class="form-control" id="exampleInputEmail1" value="@item.Email" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Şifre</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        </div>
+                                        <input type="password" name="Password" class="form-control" id="exampleInputPassword1" value="@item.Password" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="/Admin/AdminDetay/@item.AdminID" class="btn btn-info">Şifre Değiştir</a>
+                            </div>
+                        }
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

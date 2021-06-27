@@ -1,0 +1,19 @@
+﻿@using HaberSitesi.Entities.Concrete
+@model List<News>
+<div class="technology">
+    <div class="single_post_content">
+        <h2><span>Dünya</span></h2>
+        @Html.Action("DunyaEk", "Anasayfa")
+        <ul class="spost_nav">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <div class="media wow fadeInDown">
+                        <a href="/Dunya/Haber/@item.NewsID" class="media-left"> <img alt="" src="@item.NewsImage"> </a>
+                        <div class="media-body"> <a href="/Dunya/Haber/@item.NewsID" class="catg_title">@item.NewsTitle</a> </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

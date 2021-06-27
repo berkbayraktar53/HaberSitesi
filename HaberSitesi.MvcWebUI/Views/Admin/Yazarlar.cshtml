@@ -1,0 +1,36 @@
+﻿@using HaberSitesi.Entities.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Writer>
+@{
+    ViewBag.Title = "Yazarlar";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <div style="float:left"><h4>Tüm Yazarlar</h4></div>
+    <div style="float:right"><a href="/Admin/YazarEkle" class="btn btn-success">Ekle</a></div>
+</div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Resim</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Email</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img src="@item.WriterImage" style="width:100px; height:60px;" /></td>
+            <td>@item.WriterName</td>
+            <td>@item.WriterSurname</td>
+            <td>@item.WriterEmail</td>
+            <td><a href="/Admin/YazarDetay/@item.WriterID" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Admin/YazarSil/@item.WriterID" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Yazarlar", new { sayfa }))

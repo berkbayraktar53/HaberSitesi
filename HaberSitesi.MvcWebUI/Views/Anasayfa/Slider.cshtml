@@ -1,0 +1,16 @@
+﻿@using HaberSitesi.Entities.Concrete
+@model List<News>
+<div class="col-lg-8 col-md-8 col-sm-8">
+    <div class="slick_slider">
+        @foreach (var item in Model)
+        {
+            <div class="single_iteam">
+                <a href="/@item.Category.CategoryName/Haber/@item.NewsID"> <img src="@item.NewsImage" alt=""></a>
+                <div class="slider_article">
+                    <h2><a class="slider_tittle" href="/@item.Category.CategoryName/Haber/@item.NewsID">@item.NewsTitle</a></h2>
+                    <p>@item.NewsContent.Substring(0, 200)</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
